@@ -8,7 +8,7 @@
      - checkout
      - node/install-packages
      - run:
-         command: ~/Pulpit/ask2020-node-react-cicd/client/npm test
+         command: /home/client/ npm test
  workflows:
    build-and-test:
     jobs:
