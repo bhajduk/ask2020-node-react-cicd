@@ -9,7 +9,6 @@ jobs:
 		- node/install-packages
 		- run:
 			command: npm test
-
 workflows:
 	build-and-test:
 		jobs:
