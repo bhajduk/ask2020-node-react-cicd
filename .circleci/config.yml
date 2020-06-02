@@ -4,7 +4,7 @@
  jobs:
    build-and-test:
     executor: node/default
-    working_directory: ~/Pulpit/ask2020-node-react-cicd/client
+    working_directory: /home/client
     steps:
      - checkout
      - node/install-packages
