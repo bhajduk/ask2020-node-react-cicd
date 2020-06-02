@@ -4,7 +4,6 @@
  jobs:
    build-and-test:
     executor: node/default
-    working_directory: /home/client
     steps:
      - checkout
      - node/install-packages
