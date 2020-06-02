@@ -8,8 +8,7 @@
      - checkout
      - node/install-packages
      - run:
-         command: cd /home/client/   
-         command: npm test
+         command: cd /home/client/ npm test
  workflows:
    build-and-test:
     jobs:
