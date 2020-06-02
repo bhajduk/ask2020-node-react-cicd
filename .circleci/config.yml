@@ -8,6 +8,7 @@
      - checkout
      - node/install-packages
      - run:
+         working_directory: /home/client/
          command: npm test
  workflows:
    build-and-test:
