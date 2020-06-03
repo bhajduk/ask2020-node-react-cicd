@@ -1,7 +1,7 @@
  version: 2.1
  orbs:
    node: circleci/node@3.0.0
-   heroku: circleci/heroku@1.0.1
+   docker: circleci/docker@1.2.1
  jobs:
    build-and-test:
     executor: node/default
@@ -12,10 +12,13 @@
      - run: cd server && npm install
      - run: cd server && npm test
    deploy:
-    executor: heroku/default
+    executor: docker/docker
     steps:
      - checkout
-     - heroku/deploy-via-git
+     - run: cd client && docker build -t lab2_client .
+     - run: cd client && docker push lab2_client
+     - run: cd server && docker build -t lab2_server .
+     - run: cd server && docker push lab2_server
  workflows:
    build-test-and-deploy:
     jobs:
