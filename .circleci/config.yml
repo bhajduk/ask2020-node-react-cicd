@@ -15,13 +15,16 @@
       IMAGE_NAME: bhajduk/lab2
     docker:
       - image: circleci/buildpack-deps:stretch
+      auth: 
+        username: bhajduk
+        password: UnivalveSalmon5*
     steps:
      - checkout
      - setup_remote_docker
      - run: cd server && sudo docker build -t $IMAGE_NAME:serverlatest .
      - run: cd server && sudo docker push $IMAGE_NAME:serverlatest
-     - run: cd client && sudo docker build $IMAGE_NAME:clientlatest .
-     - run: cd client && docker push $IMAGE_NAME:clientlatest
+     - run: cd client && sudo docker build -t $IMAGE_NAME:clientlatest .
+     - run: cd client && sudo docker push $IMAGE_NAME:clientlatest
      
  workflows:
    build-and-test-deploy:
@@ -31,4 +34,6 @@
          branches:
            only:
              - master
-     - deploy
+     - deploy:
+       requires:
+         -build-and-test
