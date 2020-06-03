@@ -15,7 +15,7 @@
     executor: heroku/default
     steps:
      - checkout
-     - run: git commit -am "Ssss" && git push heroku master
+     - heroku/deploy-via-git
  workflows:
    build-test-and-deploy:
     jobs:
