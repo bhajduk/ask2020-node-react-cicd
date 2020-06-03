@@ -8,6 +8,8 @@
      - checkout
      - run: cd client && npm install
      - run: cd client && npm test
+     - run: cd server && npm install
+     - run: cd server && npm test
  workflows:
    build-and-test:
     jobs:
