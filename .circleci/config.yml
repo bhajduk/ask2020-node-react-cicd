@@ -14,10 +14,10 @@
     executor: docker/docker
     steps:
      - checkout
-     - run: cd client && sudo docker build . -t bhajduk/lab2:client
-     - run: cd client && sudo docker push bhajduk/lab2:client
-     - run: cd server && sudo docker build . -t bhajduk/lab2:server
-     - run: cd server && docker push bhajduk/lab2:server
+     - run: cd client && sudo docker build -t $IMAGE_NAME:serverlatest .
+     - run: cd client && sudo docker push $IMAGE_NAME:serverlatest
+     - run: cd server && sudo docker build $IMAGE_NAME:clientlatest .
+     - run: cd server && docker push $IMAGE_NAME:clientlatest
  workflows:
    build-and-test-deploy:
     jobs:
