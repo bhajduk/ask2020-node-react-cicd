@@ -14,10 +14,10 @@
     executor: docker/docker
     steps:
      - checkout
-     - run: cd client && docker build -t lab2_client .
-     - run: cd client && docker push lab2_client
-     - run: cd server && docker build -t lab2_server .
-     - run: cd server && docker push lab2_server
+     - run: cd client && docker build . -t bhajduk/lab2:client
+     - run: cd client && docker push bhajduk/lab2:client
+     - run: cd server && docker build . -t bhajduk/lab2:server
+     - run: cd server && docker push bhajduk/lab2:server
  workflows:
    build-and-test:
     jobs:
