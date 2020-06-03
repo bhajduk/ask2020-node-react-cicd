@@ -17,7 +17,7 @@
       - image: circleci/buildpack-deps:stretch
         auth: 
           username: bhajduk
-          password: UnivalveSalmon5*
+          password: $DOCKERHUB_PASSWORD
     steps:
      - checkout
      - setup_remote_docker
