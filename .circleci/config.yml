@@ -14,7 +14,7 @@
     executor: docker/docker
     steps:
      - checkout
-     - run: sudo docker login
+     - run: sudo docker login bhajduk
      - run: cd client && sudo docker build . -t bhajduk/lab2:client
      - run: cd client && sudo docker push bhajduk/lab2:client
      - run: cd server && sudo docker build . -t bhajduk/lab2:server
