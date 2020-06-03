@@ -20,17 +20,10 @@
      - run: cd server && docker build -t lab2_server .
      - run: cd server && docker push lab2_server
  workflows:
-   build-test-and-deploy:
+   build-and-test:
     jobs:
      - build-and-test:
        filters:
          branches:
            only:
              - master
-     - deploy:
-       requires:
-         - build-and-test:
-           filters:
-             branches:
-               only:
-                 - master
