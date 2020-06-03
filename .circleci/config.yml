@@ -1,15 +1,13 @@
  version: 2.1
  orbs:
-   node: circleci/node@2.1.0
+   node: circleci/node@3.0.0
  jobs:
    build-and-test:
     executor: node/default
-    working_directory: /home/ask2020-node-react-cicd/client
     steps:
      - checkout
-     - node/install-packages
-     - run:
-         command: npm test
+     - run: cd client && npm install
+     - run: cd client && npm test
  workflows:
    build-and-test:
     jobs:
