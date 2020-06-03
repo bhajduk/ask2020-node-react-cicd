@@ -17,7 +17,7 @@
      - run: cd client && sudo docker build . -t bhajduk/lab2:client
      - run: cd client && sudo docker push bhajduk/lab2:client
      - run: cd server && sudo docker build . -t bhajduk/lab2:server
-     - run: cd server && sudo docker push bhajduk/lab2:server
+     - run: cd server && docker push bhajduk/lab2:server
  workflows:
    build-and-test-deploy:
     jobs:
